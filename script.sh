@@ -53,6 +53,7 @@ do
                         sudo chmod +x /etc/rc.local
                         sudo systemctl enable rc-local
                         sudo systemctl start rc-local
+                        sudo docker restart anpr sink anpr_ui
                         ;;
                 Configure_ANPR_and_SINK}
                         echo "Number of instance:"
@@ -135,6 +136,7 @@ do
                             sed -i "s/sysip/$sysip/g" ./client_1.json
                             sudo cp client_1.json /home/$name/External_Storage/uncanny/sink/client/
                         fi
+                        sudo docker restart anpr sink anpr_ui
                         ;;
                 License_Activation)
                         cd Release_license
@@ -142,7 +144,7 @@ do
                         sudo wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu5.10_amd64.deb
                         sudo dpkg -i lib*
                         sudo sh run.sh
-                        sudo docker restart anpr
+                        sudo docker restart anpr sink anpr_ui
                         cd ../
                         ;;
                 exit)
