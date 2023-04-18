@@ -122,7 +122,7 @@ do
                         then
                             echo "System IP:"
                             read sysip
-                            sudo cp pm2_list_2.js /home/$name/External_Storage/uncanny/sink/pm2_app.js
+                            sudo cp pm2_app_2.js /home/$name/External_Storage/uncanny/sink/pm2_app.js
                             sudo cp sink_1.json /home/$name/External_Storage/uncanny/sink/config/config_1.json
                             sudo cp sink_2.json /home/$name/External_Storage/uncanny/sink/config/config_2.json
                             sed -i "s/sysip/$sysip/g" ./client_1.json
@@ -131,7 +131,7 @@ do
                         else
                             echo "System IP:"
                             read sysip
-                            sudo cp pm2_list.js /home/$name/External_Storage/uncanny/sink/pm2_app.js
+                            sudo cp pm2_app.js /home/$name/External_Storage/uncanny/sink/pm2_app.js
                             sudo cp sink_1.json /home/$name/External_Storage/uncanny/sink/config/config_1.json
                             sed -i "s/sysip/$sysip/g" ./client_1.json
                             sudo cp client_1.json /home/$name/External_Storage/uncanny/sink/client/
